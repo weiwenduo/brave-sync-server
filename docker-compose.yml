@@ -62,14 +62,10 @@ services:
     build:
       context: .
       dockerfile: dynamo.Dockerfile
-    ports:
-      - "8000:8000"
     networks:
       - sync
   redis:
-    image: public.ecr.aws/docker/library/redis:6.2
-    ports:
-      - "6379:6379"
+    image: redis:6.2
     environment:
       - ALLOW_EMPTY_PASSWORD=yes
     networks:
