@@ -4,6 +4,9 @@ ARG VERSION
 ARG BUILD_TIME
 ARG COMMIT
 
+ENV GO111MODULE=on
+ENV GOPROXY=https://goproxy.cn
+
 WORKDIR /src
 COPY go.mod go.sum ./
 RUN go mod download
